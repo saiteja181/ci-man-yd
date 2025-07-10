@@ -14,6 +14,8 @@ Stop getting stuck on bugs for hours. CI-MAN-YD analyzes your code instantly and
 - **Smart Hint System** - Syntax errors, logic issues, optimizations
 - **Clean Interface** - No clutter, just your code and helpful suggestions
 - **Submission History** - Track your progress and past analyses
+- **Striver Sheet Tracker** - Practice SDE questions in random order and mark
+  completed ones
 
 ## 🛠️ Tech Stack
 
