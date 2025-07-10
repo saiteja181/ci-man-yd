@@ -16,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/code', require('./routes/code'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/striver', require('./routes/striver'));
 
 // Test route
 app.get('/', (req, res) => {

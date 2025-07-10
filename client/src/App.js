@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Brain, User, History, Send, Lightbulb, AlertCircle, CheckCircle } from 'lucide-react';
+import StriverSheet from './StriverSheet';
 
 
 // API Service - normally you'd import this from services/api.js
@@ -29,6 +30,15 @@ const apiService = {
     } catch (error) {
       return { error: 'Backend not reachable' };
     }
+  },
+
+  async getStriverQuestions(shuffle = false) {
+    const query = shuffle ? '?shuffle=true' : '';
+    const response = await fetch(`${API_BASE_URL}/striver${query}`);
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
+    }
+    return await response.json();
   }
 };
 
@@ -157,6 +167,7 @@ const App = () => {
           <div className="space-y-4">
             <HintPanel hints={hints} isLoading={isLoading} />
             <SubmissionHistory submissions={analysisHistory} />
+            <StriverSheet api={apiService} />
           </div>
           
         </div>
